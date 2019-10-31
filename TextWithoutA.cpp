@@ -1,26 +1,32 @@
+/*Patricia López Navarro
+ * 
+ * This program asks for diffent words
+ * as long as it has "a" or "A" once*/
 #include <iostream>
 using namespace std;
 int main()
 {
-	bool noa;
-	string text;
-	noa=false;
+	bool noACheck;
+	string wordAsked;
+	noACheck=false;
 	do
 	{
-		cout<<"Enter a word";
-		cin>>text;
-		if (!noa)
+		cout<<"Enter a word ";
+		cin>>wordAsked;
+		if (!noACheck)
 		{
-			noa=true;
-			for(unsigned int i=0;i<text.length();i++)
+			noACheck=true;
+			for(unsigned int characterCount=0;
+				characterCount<wordAsked.length();characterCount++)
 			{
-				if (text[i]=='a'||text[i]=='A')
+				if (wordAsked[characterCount]=='a'||
+					wordAsked[characterCount]=='A')
 				{
-					noa=false;
+					noACheck=false;
 				}
 			}
 		}
 	}
-	while (!noa);
+	while (!noACheck);
 	return 0;
 }
