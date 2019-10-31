@@ -1,24 +1,29 @@
+/*Patricia López Navarro
+ * 
+ * This program asks the user for ten numbers, then it gives the
+ * number of increments and decrements that took place*/
 #include <iostream>
 using namespace std;
 int main()
 {
-	const int C=10;
-	int na,nb,i,d;
-	cout<<"Input number 1";
-	cin>>na;
-	i=0;
-	d=0;
-	nb=0;
-	for (int c=2;c<=C;c++)
+	const int IMPUT_MAX=10;
+	int lastNumber,secondToLastNumber,increment,decrement;
+	cout<<"Input number 1 ";
+	cin>>lastNumber;
+	increment=0;
+	decrement=0;
+	secondToLastNumber=0;
+	for (int count=2;count<=IMPUT_MAX;count++)
 	{
-		nb = na;
-		cout<<"Input number"<<c;
-		cin>>na;
-		if(na>nb)
-			i++;
-		else if(na<nb)
-			d++;
+		secondToLastNumber = lastNumber;
+		cout<<"Input number "<<count;
+		cin>>lastNumber;
+		if(lastNumber>secondToLastNumber)
+			increment++;
+		else if(lastNumber<secondToLastNumber)
+			decrement++;
 	}
-	cout<<"There has been "<<i<<" increments and "<<d<<" decrements";
+	cout<<"There has been "<<increment<<" increments and "
+		<<decrement<<" decrements";
 	return 0;
 }
